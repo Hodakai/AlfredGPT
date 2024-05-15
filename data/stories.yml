@@ -1,0 +1,63 @@
+version: "3.1"
+
+stories:
+
+  - story: book table process
+    steps:
+      - intent: book_table
+      - action: utter_book_table_date
+      - intent: book_table_date
+        entities:
+          - date: "2024-05-10"
+      - action: utter_book_table_people
+      - intent: book_table_people
+        entities:
+          - people: "2"
+      - action: utter_book_table_name
+      - intent: book_table_name
+        entities:
+          - name: "Gravy"
+      - action: utter_book_table_phone
+      - intent: book_table_phone
+        entities:
+          - phone: "+33627364526"
+      - action: utter_check_availability
+      - action: utter_book_table_recap
+
+  - story: add comment to reservation
+    steps:
+      - intent: add_comment
+        entities:
+          - comment: "Please prepare a quiet table"
+      - action: utter_add_comment
+
+  - story: cancel reservation
+    steps:
+      - intent: cancel_reservation
+      - action: utter_ask_reservation_id
+      - intent: affirm
+      - action: utter_cancel_reservation
+
+  - story: show and change reservation info
+    steps:
+      - intent: show_reservation_info
+      - action: utter_show_reservation_info
+      - intent: change_comment
+        entities:
+          - comment: "I'll be late by 15 minutes"
+      - action: utter_change_comment
+
+  - story: query for allergens
+    steps:
+      - intent: get_allergens
+      - action: utter_get_allergens
+
+  - story: get daily menu
+    steps:
+      - intent: get_daily_menu
+      - action: utter_get_daily_menu
+
+  - story: get full menu link
+    steps:
+      - intent: get_full_menu
+      - action: utter_get_full_menu

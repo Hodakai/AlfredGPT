@@ -1,0 +1,591 @@
+version: "3.1"
+
+nlu:
+  - intent: greet
+    examples: |
+      - hey
+      - hello
+      - hi
+      - hello there
+      - good morning
+      - good evening
+      - moin
+      - hey there
+      - let's go
+      - hey dude
+      - goodmorning
+      - goodevening
+      - good afternoon
+      - greetings
+      - howdy
+      - what's up
+      - hey hey
+      - good day
+      - hola
+      - hi there
+
+  - intent: goodbye
+    examples: |
+      - cu
+      - good by
+      - cee you later
+      - good night
+      - bye
+      - goodbye
+      - have a nice day
+      - see you around
+      - bye bye
+      - see you later
+      - farewell
+      - take care
+      - later
+      - peace out
+      - I'm off
+      - catch you later
+      - until next time
+      - adios
+      - cheerio
+      - I must be going
+
+  - intent: affirm
+    examples: |
+      - yes
+      - y
+      - indeed
+      - of course
+      - that sounds good
+      - correct
+      - absolutely
+      - that's right
+      - sure
+      - definitely
+      - yes please
+      - yup
+      - yeah
+      - that’s it
+      - just so
+      - exactly
+      - you got it
+      - that's true
+      - affirmative
+      - certainly
+
+  - intent: deny
+    examples: |
+      - no
+      - n
+      - never
+      - I don't think so
+      - don't like that
+      - no way
+      - not really
+      - not at all
+      - nah
+      - nope
+      - hardly
+      - I guess not
+      - no thanks
+      - not possible
+      - that's wrong
+      - not true
+      - unfortunately no
+      - I don't believe so
+      - negative
+      - that's not right
+
+  - intent: mood_great
+    examples: |
+      - perfect
+      - great
+      - amazing
+      - feeling like a king
+      - wonderful
+      - I am feeling very good
+      - I am great
+      - I am amazing
+      - I am going to save the world
+      - super stoked
+      - extremely good
+      - so so perfect
+      - so good
+      - so perfect
+      - fantastic
+      - really good
+      - as good as it gets
+      - top of the world
+      - never been better
+      - couldn't be better
+
+  - intent: mood_unhappy
+    examples: |
+      - my day was horrible
+      - I am sad
+      - I don't feel very well
+      - I am disappointed
+      - super sad
+      - I'm so sad
+      - sad
+      - very sad
+      - unhappy
+      - not good
+      - not very good
+      - extremely sad
+      - so saad
+      - down in the dumps
+      - feeling blue
+      - out of sorts
+      - miserable
+      - feeling down
+      - just not my day
+      - it's been a tough day
+
+  - intent: bot_challenge
+    examples: |
+      - are you a bot?
+      - are you a human?
+      - am I talking to a bot?
+      - am I talking to a human?
+      - are you real?
+      - are you a robot?
+      - is this a bot?
+      - is a human there?
+      - can you prove you're not a robot?
+      - do you have feelings?
+      - are you artificial intelligence?
+      - are you automated?
+      - is there a person there?
+      - who am I chatting with?
+      - are you sentient?
+      - do you understand me?
+      - are you alive?
+      - how human are you?
+      - are you just a program?
+      - are you operated by a human?
+
+  - intent: book_table
+    examples: |
+      - Could we reserve a table?
+      - I'd like to book a table.
+      - Is it possible to make a reservation for a table?
+      - Can we reserve a table for tonight?
+      - We'd like to book a table.
+      - Reserve a table for two.
+      - I want to make a reservation.
+      - How do I book a table?
+      - Can I get a table for tomorrow?
+      - Book a table under my name.
+      - Secure a table for four.
+      - I need a reservation.
+      - Set up a reservation for tonight.
+      - Please reserve a table for me.
+      - Arrange a table this evening.
+      - Make a booking for six.
+      - Could you book a table for us?
+      - Table for dinner please.
+      - I would like to reserve a table.
+      - Table booking assistance needed.
+
+  - intent: book_table_date
+    examples: |
+      - I would like to reserve a table on [Monday, August 12th](date).
+      - Can we get a table for [Saturday, September 7th](date)?
+      - Book me a table on [Friday, October 25th](date) please.
+      - Can I set up a dinner for [Wednesday, November 20th](date)?
+      - Reserve a table for [June 15th](date).
+      - I need a table on [July 21st](date).
+      - Please reserve a dinner spot for [September 12th](date).
+      - I'd like to book for [October 31st, Halloween](date).
+      - Can you set a reservation for [Christmas Eve, December 24th](date)?
+      - Book a table for [Valentine's Day, February 14th](date).
+      - I need a reservation on [March 2nd](date).
+      - Please reserve a spot for [April 18th](date).
+      - Schedule a dinner for [May 25th](date).
+      - Could I get a reservation for [August 3rd](date)?
+      - Set us up for dinner on [November 5th](date).
+      - We need a booking on [December 31st, New Year's Eve](date).
+      - Could you reserve a table for [January 6th](date)?
+      - We want to dine on [February 29th](date).
+      - Make a reservation for [March 13th](date).
+      - I'd like to book a table for [April 1st](date).
+      - [May 4th](date)
+      - For the [June 20](date)
+      - Can I get a table on [July 10th](date)?
+      - I need a reservation for [September 5th](date).
+      - Book [August 15th](date), please.
+      - Secure [December 21st](date) for dinner.
+      - Arrange a table for [January 1st](date).
+      - Reserve for [March 20th](date).
+      - Schedule [April 18th](date) for us.
+      - Lock in [November 11th](date).
+      - I want to book [October 31st](date).
+      - Set us up for [February 14th](date).
+
+  - intent: book_table_people
+    examples: |
+      - I'm looking for a table of [six](people).
+      - We need a table for [four](people).
+      - Can I have a table for [three people](people)?
+      - Is it possible to get seating for [twelve](people)?
+      - We're [eight](people) total.
+      - I need to book for [two](people).
+      - Arrange a table for [ten](people), please.
+      - There will be [seven of us](people).
+      - Can you accommodate [nine](people)?
+      - We have [eleven people](people) in our party.
+      - It's a large group of [fifteen](people).
+      - We’d like a table for [five](people).
+      - Can you set up for [thirteen](people)?
+      - We are a small group of [three](people).
+      - Arranging for [fourteen](people), is it possible?
+      - I'm hosting an event for [twenty](people).
+      - Need a table for [sixteen](people).
+      - We'll be [nineteen people](people) at the dinner.
+      - Book a spot for [eighteen](people).
+      - Can I reserve for [seventeen](people)?
+      - [20](people) people
+      - For [5](people) guys
+      - For [2](people)
+      - [10](people)
+
+  - intent: book_table_name
+    examples: |
+      - For [Martin](name) please.
+      - Reservation under [Stephanie](name).
+      - The reservation name is [Alex](name).
+      - Can you put it under [Jessica](name)?
+      - It should be for [Benjamin](name).
+      - Book the table in the name of [Rebecca](name).
+      - It's for [Samantha](name).
+      - Can you reserve it under [Daniel](name)?
+      - The booking is for [Patricia](name).
+      - His name is [Christopher](name), please book it.
+      - Please use the name [Rachel](name).
+      - The table should be under [Derek](name).
+      - It will be for [Amanda](name).
+      - Can you set it up under [Sarah](name)?
+      - Please book it under the name [Michael](name).
+      - Reserve under [Laura](name).
+      - The reservation should be for [Jason](name).
+      - Can be under [Melissa](name).
+      - It's booked under [Timothy](name).
+      - Please put it under [Catherine](name).
+
+  - intent: book_table_phone
+    examples: |
+      - Sure, here it is [0627462784](phone).
+      - My phone number is [0984757654](phone).
+      - You can reach me at [+33673293774](phone).
+      - The number to use is [+4587253714](phone).
+      - My contact is [0765426425](phone).
+      - Call me on [0569852147](phone).
+      - The reservation phone is [0678965321](phone).
+      - Here’s my contact number [0998877665](phone).
+      - Phone number to use is [+4407982123456](phone).
+      - Use this number [+12025550123](phone).
+      - My mobile is [04479521368](phone).
+      - Contact me at [03456897412](phone).
+      - Here is my tel [+358401234567](phone).
+      - The phone number is [0733211234](phone).
+      - My number is [+41791234567](phone).
+      - You can contact me at [0222345678](phone).
+      - Please use this number [07712345678](phone).
+      - The best number is [065432187654](phone).
+      - Call on this number [0543216547](phone).
+      - You can use [0487654321](phone) for the reservation.
+
+  - intent: check_availability
+    examples: |
+      - Can you check if there is availability for 5 people on [June 12th](date)?
+      - Is there a table available for [four this Friday](date)?
+      - Please see if you have space for [two on May 5th](date).
+      - I need to know if you can accommodate [seven people next Monday](date).
+      - Check availability for a party of [eight on April 22nd](date).
+      - Can we get a spot for [three tomorrow](date)?
+      - See if there's room for [six next Saturday](date).
+      - I'd like to know if you have any openings for [April 30th](date).
+      - Is there a free table for [two this Thursday](date)?
+      - What's the availability for [a large group next week](date)?
+      - Can you book a table for [nine on July 18th](date)?
+      - Do you have any availability for [a dinner date next Friday](date)?
+      - We need a spot for [four this Sunday afternoon](date).
+      - Check for an opening for [six during this weekend](date).
+      - Is there an option for [three people on January 2nd](date)?
+      - Please confirm if a table is available for [eight this Wednesday](date).
+      - We would like to know if we can dine on [March 15th](date).
+      - Can I get a reservation for [five on the first of next month](date)?
+      - I'd like to reserve for [ten people on August 27th](date).
+      - Could you tell me the availability for [September 10th](date)?
+
+  - intent: cancel_reservation
+    examples: |
+      - I need to cancel my reservation.
+      - Please cancel my table booking.
+      - I can't make it tonight; please cancel my reservation.
+      - Could you cancel the table reserved for [tomorrow](date)?
+      - Cancel my booking for [this Saturday](date), please.
+      - I won't be able to come on [June 5th](date), cancel it.
+      - Please remove my reservation for [July 7th](date).
+      - Undo our table booking for [September 9th](date).
+      - Cancel our dinner reservations for [August 15th](date).
+      - I have an emergency and need to cancel our plan for [next Monday](date).
+      - Rescind our table reservation for [tonight](date).
+      - Please ensure you cancel my booking for [this weekend](date).
+      - Due to illness, I must cancel our dinner on [March 24th](date).
+      - I'm calling off our reservation for [April 1st](date).
+      - It turns out I won't need the booking for [May 18th](date).
+      - We're not coming; please cancel our booking for [July 22nd](date).
+      - I need to cancel my reservation for a table on [June 9th](date).
+      - Can you take off our names for the dinner on [September 11th](date)?
+      - Cancel the table I reserved for [six on October 10th](date).
+      - Please cancel my reservation for [November 30th](date).
+
+  - intent: add_comment
+    examples: |
+      - Can you add a note to my booking? Some guests are vegetarian.
+      - Please add a comment that we will need a high chair.
+      - Include a note for a birthday cake, it's a surprise.
+      - Make a comment about dietary restrictions; no dairy please.
+      - I'd like you to add a note about needing wheelchair access.
+      - Please note that we'll have two toddlers with us.
+      - Can you please add that we need a quiet table away from the kitchen?
+      - Mention in the booking that we'll arrive 20 minutes late.
+      - Add a request for a window seat if available.
+      - Include a preference for a booth in the reservation notes.
+      - Please comment that we want separate bills.
+      - Note that we require gluten-free options.
+      - Can you make a note that we will need parking space for two cars?
+      - Add that we will be celebrating an anniversary.
+      - Include a need for pet-friendly seating if possible.
+      - Note a peanut allergy for one of our guests.
+      - Please add that we need low-sodium options for our meals.
+      - Can you put a note that we prefer not to be seated near large groups?
+      - Make a note that one of us uses a hearing aid and needs a quieter area.
+      - Include a request for extra napkins and spoons at the table.
+
+  - intent: show_reservation_info
+    examples: |
+      - Can you show me my reservation details?
+      - What details do you have on my booked table?
+      - Please pull up my booking information.
+      - I need to review the specifics of my reservation.
+      - Show me the reservation under [my name](name).
+      - Can you confirm the date and time of my booked table?
+      - What did I book for [June 20th](date)?
+      - Can I see the details for our dinner next week?
+      - Display my reservation for [this Saturday night](date).
+      - What are the reservation details for [Ella's birthday party](name)?
+      - Could I see the number of seats I reserved?
+      - Please confirm my reservation time.
+      - Can you check my booking for a party of [six](people)?
+      - Show the details of the table reserved under [John Doe](name).
+      - What's the booking status for [April 10th](date)?
+      - Details for my reservation this weekend, please.
+      - Review the reservation set for [December 24th](date), if you can.
+      - I'm looking for information on our reservation next month.
+      - Checker the details on the booking for [July 5th](date).
+      - Provide the booking info for a table under [Stephanie](name).
+
+  - intent: change_comment
+    examples: |
+      - Change the earlier comment to include a request for window seating.
+      - I need to update my reservation to add that I'll be bringing a pet.
+      - Please modify our reservation to indicate a gluten-free diet.
+      - Can we change the comment to specify a birthday celebration?
+      - Black Friday special: Take 20% off a Storybook Premium subscription
+      - Update the booking note; we'll be five minutes late.
+      - Change our reservation to note that one guest is in a wheelchair.
+      - Could you please adjust the booking to state a preference for indoor seating?
+      - Revise the note to specify no high chairs needed now.
+      - Update the comment to include a need for a quiet table.
+      - Please edit the reservation note to reflect no dietary restrictions.
+      - Change my booking to add an extra guest.
+      - Can you correct the reservation to include a car seat requirement?
+      - I'd like to adjust the booking to add a vegetarian option.
+      - Please alter the booking to note our late arrival.
+      - Modify the reservation details to exclude seafood.
+      - Can you update my booking to reflect no alcohol at the table?
+      - Adjust the note to ask for a corner table.
+      - Please revise the booking to include a request for birthday decorations.
+      - Change the reservation note to specify an anniversary dinner.
+
+  - intent: get_allergens
+    examples: |
+      - What are the allergens in today's menu?
+      - Can you list the allergens for the dishes?
+      - I need information on potential allergens for tonight's menu.
+      - Could you specify the allergenic ingredients in your meals?
+      - What common allergens should we be aware of in your restaurant?
+      - Can you clarify if your dishes contain nuts?
+      - Are there any soy-based ingredients in your dishes today?
+      - Do any of your meals include shellfish as an allergen?
+      - Is there dairy in any of today's specialties?
+      - I'm allergic to gluten, what can I eat safely?
+      - Can you check for egg allergens in any dishes?
+      - Please identify any allergenic spices in today's meals.
+      - Are any of your dishes prepared with peanuts?
+      - What allergens are present in the vegetarian options?
+      - List any allergens found in your dessert menu.
+      - Does the seafood menu have shellfish allergens?
+      - Specify the allergens for your pasta dishes.
+      - Are there any allergens in your children's meals?
+      - Indicate if any starters contain lactose.
+      - Provide details on gluten content in your appetizers.
+
+  - intent: get_daily_menu
+    examples: |
+      - What is on the menu today?
+      - Can I see today's specials?
+      - Show me the list of dishes available today.
+      - What are we offering on the menu for lunch today?
+      - Could you provide today's dinner options?
+      - What foods are featured in today's menu?
+      - I'd like to know today's meal choices.
+      - Can you detail today's menu for me?
+      - What's being served for dinner tonight?
+      - Are there any specials today?
+      - What culinary delights do you have today?
+      - Is there a chef's special on the menu today?
+      - What is the main dish on today's menu?
+      - Show me your full offerings for today.
+      - I'm interested in today's vegetarian options, what are they?
+      - May I have a look at what's special for today
+      - Can you highlight today's seafood offerings?
+      - What appetizers are available today?
+      - List today's dessert specials, please.
+      - I'm curious about today's soup, what is it?
+
+  - intent: get_full_menu
+    examples: |
+      - Where can I find the full menu?
+      - Show me the complete menu for your restaurant.
+      - Please display the entire menu.
+      - I'd like to browse your full range of dishes.
+      - Can you present the full list of menu items?
+      - Provide me with a detailed menu, please.
+      - Where's the detailed menu for today?
+      - How can I view all your food selections?
+      - Show me everything available on your menu.
+      - Give me a comprehensive look at your menu offerings.
+      - I want to see all your appetizers and main courses.
+      - Can you give me the full breakdown of your meals?
+      - Display your full menu including drinks and desserts.
+      - What options do I have on your full menu?
+      - I need a full listing of your restaurant's offerings.
+      - Please enumerate each dish on your full menu.
+      - Where might I find a complete menu online?
+      - List all categories of food you serve.
+      - Could you send me a link to your complete menu?
+      - Show me all menu options from starters to desserts.
+
+  - lookup: date
+    examples: |
+      - 24 June 2024
+      - 12 September 2024
+      - 14 February 2024
+      - 31 December 2023
+      - 20 April 2025
+      - 15 August 2025
+      - 5 November 2026
+      - 3 January 2027
+      - 21 March 2028
+      - 9 May 2029
+      - 30 July 2029
+      - 2 October 2030
+      - 18 December 2031
+      - 22 February 2032
+      - 17 April 2033
+      - 25 October 2033
+      - 6 July 2034
+      - 11 September 2035
+      - 8 January 2036
+      - 27 March 2037
+      - 20 June
+      - 30 March
+      - 21 April
+      - 10 August
+      - 5 September
+      - 9 January
+      - 1st February
+      - 2nd November
+
+  - lookup: people
+    examples: |
+      - 1
+      - two
+      - 3 people
+      - Four
+      - five persons
+      - a group of 6
+      - 7 guests
+      - Eight
+      - nine
+      - 10
+      - eleven
+      - dozen
+      - 13
+      - about 14
+      - 15
+      - sixteen
+      - 17
+      - 18 crowd
+      - nearly 19
+      - twenty
+      - 20
+      - 5
+      - 12
+
+  - lookup: name
+    examples: |
+      - Ms. Smith
+      - Mr. John
+      - Emily
+      - Dr. Morris
+      - Prof. Johnson
+      - Sarah Connor
+      - Bruce Wayne
+      - Clark Kent
+      - Tony Stark
+      - Peter Parker
+      - Bruce Banner
+      - Steve Rogers
+      - Natasha Romanoff
+      - Nick Fury
+      - Charles Xavier
+      - Logan W
+      - Scott Summers
+      - Jean Grey
+      - Ororo Munroe
+      - Victor von Doom
+      - Gravy
+      - Miguel
+      - Smith
+      - Fury
+      - Roberts
+      - DiCaprio
+      - Dick Aprio
+      - Banner
+      - Wayne
+      - Wick
+
+  - lookup: phone
+    examples: |
+      - +33687980273
+      - 0634543423
+      - +36673293774
+      - 0787665454
+      - 0976546253
+      - +45762635465
+      - +20768357452
+      - +98273645372
+      - +28374362837
+      - 0584563546
+      - 0485767465
+      - 0273646475
+      - +491234567890
+      - 02233445566
+      - 0123456789
+      - +441234567890
+      - 0601234567
+      - +393492345678
+      - 0701234567
+      - +33765432109

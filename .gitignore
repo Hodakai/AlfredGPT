@@ -30,3 +30,6 @@ docker-compose.override.yml
 # Secrets
 secrets.yml
 credentials.yml
+
+# Other
+.idea

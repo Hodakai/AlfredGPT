@@ -1,0 +1,37 @@
+version: "3.1"
+
+rules:
+  - rule: Say goodbye anytime the user says goodbye
+    steps:
+      - intent: goodbye
+      - action: utter_goodbye
+
+  - rule: Add a comment to reservation
+    steps:
+      - intent: add_comment
+      - action: utter_add_comment
+
+  - rule: Show reservation info
+    steps:
+      - intent: show_reservation_info
+      - action: utter_show_reservation_info
+
+  - rule: Change reservation comment
+    steps:
+      - intent: change_comment
+      - action: utter_change_comment
+
+  - rule: Get allergens list
+    steps:
+      - intent: get_allergens
+      - action: utter_get_allergens
+
+  - rule: Provide daily menu
+    steps:
+      - intent: get_daily_menu
+      - action: utter_get_daily_menu
+
+  - rule: Provide full menu link
+    steps:
+      - intent: get_full_menu
+      - action: utter_get_full_menu

@@ -1,0 +1,118 @@
+version: "3.1"
+
+intents:
+  - greet
+  - goodbye
+  - affirm
+  - deny
+  - mood_great
+  - mood_unhappy
+  - bot_challenge
+  - book_table
+  - book_table_date
+  - book_table_people
+  - book_table_name
+  - book_table_phone
+  - check_availability
+  - cancel_reservation
+  - add_comment
+  - show_reservation_info
+  - change_comment
+  - get_allergens
+  - get_daily_menu
+  - get_full_menu
+
+entities:
+  - date
+  - people
+  - name
+  - phone
+  - comment
+  - reservation_id
+
+actions:
+  - utter_book_table_recap
+
+responses:
+  utter_greet:
+    - text: "Hello ! How can I assist you today ? You can ask me to book a table, check for menu, and more."
+
+  utter_goodbye:
+    - text: "Goodbye ! Hope to see you soon."
+
+  utter_book_table_date:
+    - text: "Sure, for which date would you like the reservation ?"
+
+  utter_book_table_people:
+    - text: "Noted, how many people will be there ?"
+
+  utter_book_table_name:
+    - text: "Alright, under what name should I place the reservation ?"
+
+  utter_book_table_phone:
+    - text: "And lastly, could I please have your phone number ?"
+
+  utter_check_availability:
+    - text: "Let me check the availability for that date and number of people."
+
+  utter_ask_reservation_id:
+    - text: "Can you please provide your reservation ID?"
+
+  utter_cancel_reservation:
+    - text: "Your reservation has been successfully cancelled."
+
+  utter_add_comment:
+    - text: "I have added this comment to your reservation: {comment}"
+
+  utter_show_reservation_info:
+    - text: "Here is your reservation information: {reservation_info}"
+
+  utter_change_comment:
+    - text: "I've updated your comment to: {comment}"
+
+  utter_get_allergens:
+    - text: "Here is the list of potential allergens in our dishes today."
+
+  utter_get_daily_menu:
+    - text: "Today's menu consists of: {menu}"
+
+  utter_get_full_menu:
+    - text: "You can view our full menu at [this link](https://your-restaurant-url.com/menu)."
+
+  utter_book_table_recap:
+    - text: "Here is the recap of your booking: Date: {date}, Name: {name}, Number of People: {people}, Phone: {phone}."
+
+slots:
+  slot_date:
+    type: text
+    mappings:
+      - type: from_entity
+        entity: date
+  slot_people:
+    type: text
+    mappings:
+      - type: from_entity
+        entity: people
+  slot_name:
+    type: text
+    mappings:
+      - type: from_entity
+        entity: name
+  slot_phone:
+    type: text
+    mappings:
+      - type: from_entity
+        entity: phone
+  slot_comment:
+    type: text
+    mappings:
+      - type: from_text
+  slot_reservation_id:
+    type: text
+    mappings:
+      - type: from_entity
+        entity: reservation_id
+
+session_config:
+  session_expiration_time: 60
+  carry_over_slots_to_new_session: true
