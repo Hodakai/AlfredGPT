@@ -1,0 +1,32 @@
+# Compiled
+__pycache__/
+*.py[cod]
+*$py.class
+
+# Cache / tmp
+.cache/
+*.pyc
+*.tmp
+
+# Rasa
+/.rasa/
+models/
+*.db
+*.log
+*.tar.gz
+
+# Env
+venv/
+*venv
+.env
+
+# Mac
+.DS_Store
+
+# Docker
+docker-compose.override.yml
+*.env
+
+# Secrets
+secrets.yml
+credentials.yml
