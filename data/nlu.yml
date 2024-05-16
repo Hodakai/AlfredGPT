@@ -269,6 +269,33 @@ nlu:
       - Can be under [Melissa](name).
       - It's booked under [Timothy](name).
       - Please put it under [Catherine](name).
+      - Put it on [Fury](name).
+      - Under [Elena](name) please.
+      - Set the reservation for [Oliver](name).
+      - Booking under [Emma](name).
+      - Reserve it in [Liam](name)'s name.
+      - The name for the reservation is [Sophia](name).
+      - Please place it under [Ethan](name).
+      - Could you put it under [Isabella](name)?
+      - Make the booking for [Mason](name).
+      - I'd like it under the name [Lily](name).
+      - Reservation in the name of [Jacob](name).
+      - Book under [Madison](name) please.
+      - Place it in [James](name)'s name.
+      - Register it under [Nora](name).
+      - Can we do it under [Logan](name)'s name?
+      - I want it in [Charlotte](name)'s name please.
+      - Make the reservation under [Lucas](name).
+      - The booking should be under [Ava](name).
+      - Please set up the table for [William](name).
+      - Can you put the reservation in [Mia](name)'s name?
+      - On behalf of [Olivia](name), please.
+      - Please use [Henry](name) as the booking name.
+      - The table reservation is for [Zoe](name).
+      - Under [Jack](name)'s name, if possible.
+      - Could you please book under [Harper](name)?
+      - Reserve the table under [Elijah](name)'s name.
+      - [Smith](name).
 
   - intent: book_table_phone
     examples: |
