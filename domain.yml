@@ -19,8 +19,7 @@ intents:
   - show_reservation_info
   - change_comment
   - get_allergens
-  - get_daily_menu
-  - get_full_menu
+  - get_menu
   - cancel_reservation_confirmation
 
 entities:
@@ -77,16 +76,16 @@ responses:
     - text: "I've updated your comment to: {comment}"
 
   utter_get_allergens:
-    - text: "Here is the list of potential allergens in our dishes today."
+    - text: "Margherita Pizza: Tomato sauce, mozzarella, and fresh basil (Allergens: Gluten, Dairy)
+     / Caesar Salad: Romaine lettuce, parmesan cheese, and croutons (Allergens: Dairy, Eggs)
+     / Spaghetti Carbonara: Spaghetti with pancetta, egg, and parmesan (Allergens: Gluten, Eggs, Dairy)
+     / Tiramisu: Coffee-flavored Italian dessert (Allergens: Dairy, Eggs)"
 
-  utter_get_daily_menu:
-    - text: "Today's menu consists of: {menu}"
-
-  utter_get_full_menu:
-    - text: "You can view our full menu at [this link](https://your-restaurant-url.com/menu)."
-
-  utter_book_table_recap:
-    - text: "Here is the recap of your booking: Date: {date}, Name: {name}, Number of People: {people}, Phone: {phone}."
+  utter_get_menu:
+    - text: "Margherita Pizza: Tomato sauce, mozzarella, and fresh basil - $12.00
+    / Caesar Salad: Romaine lettuce, parmesan cheese, and croutons - $10.00
+	/ Spaghetti Carbonara: Spaghetti with pancetta, egg, and parmesan - $15.00
+	/ Tiramisu: Coffee-flavored Italian dessert - $8.00"
 
 slots:
   slot_date:

@@ -448,7 +448,7 @@ nlu:
       - Indicate if any starters contain lactose.
       - Provide details on gluten content in your appetizers.
 
-  - intent: get_daily_menu
+  - intent: get_menu
     examples: |
       - What is on the menu today?
       - Can I see today's specials?

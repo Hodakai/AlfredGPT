@@ -53,12 +53,7 @@ stories:
       - intent: get_allergens
       - action: utter_get_allergens
 
-  - story: get daily menu
+  - story: get menu
     steps:
-      - intent: get_daily_menu
-      - action: utter_get_daily_menu
-
-  - story: get full menu link
-    steps:
-      - intent: get_full_menu
-      - action: utter_get_full_menu
+      - intent: get_menu
+      - action: utter_get_menu

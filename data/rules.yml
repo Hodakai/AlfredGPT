@@ -26,12 +26,7 @@ rules:
       - intent: get_allergens
       - action: utter_get_allergens
 
-  - rule: Provide daily menu
+  - rule: Provide menu
     steps:
-      - intent: get_daily_menu
-      - action: utter_get_daily_menu
-
-  - rule: Provide full menu link
-    steps:
-      - intent: get_full_menu
-      - action: utter_get_full_menu
+      - intent: get_menu
+      - action: utter_get_menu
