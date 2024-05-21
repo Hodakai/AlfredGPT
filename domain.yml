@@ -21,6 +21,7 @@ intents:
   - get_allergens
   - get_daily_menu
   - get_full_menu
+  - cancel_reservation_confirmation
 
 entities:
   - date
@@ -29,9 +30,11 @@ entities:
   - phone
   - comment
   - reservation_id
+  - cancel_reservation_id
 
 actions:
-  - utter_book_table_recap
+  - action_save_booking_to_json
+  - action_delete_booking
 
 responses:
   utter_greet:
@@ -57,6 +60,9 @@ responses:
 
   utter_ask_reservation_id:
     - text: "Can you please provide your reservation ID?"
+
+  utter_ask_cancel:
+    - text: "Please write your reservation ID like this to cancel : CANCEL - [Reservation ID]"
 
   utter_cancel_reservation:
     - text: "Your reservation has been successfully cancelled."
@@ -112,6 +118,11 @@ slots:
     mappings:
       - type: from_entity
         entity: reservation_id
+  slot_cancel_reservation_id:
+    type: text
+    mappings:
+      - type: from_entity
+        entity: cancel_reservation_id
 
 session_config:
   session_expiration_time: 60

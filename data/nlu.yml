@@ -347,24 +347,14 @@ nlu:
     examples: |
       - I need to cancel my reservation.
       - Please cancel my table booking.
-      - I can't make it tonight; please cancel my reservation.
-      - Could you cancel the table reserved for [tomorrow](date)?
-      - Cancel my booking for [this Saturday](date), please.
-      - I won't be able to come on [June 5th](date), cancel it.
-      - Please remove my reservation for [July 7th](date).
-      - Undo our table booking for [September 9th](date).
-      - Cancel our dinner reservations for [August 15th](date).
-      - I have an emergency and need to cancel our plan for [next Monday](date).
-      - Rescind our table reservation for [tonight](date).
-      - Please ensure you cancel my booking for [this weekend](date).
-      - Due to illness, I must cancel our dinner on [March 24th](date).
-      - I'm calling off our reservation for [April 1st](date).
-      - It turns out I won't need the booking for [May 18th](date).
-      - We're not coming; please cancel our booking for [July 22nd](date).
-      - I need to cancel my reservation for a table on [June 9th](date).
-      - Can you take off our names for the dinner on [September 11th](date)?
-      - Cancel the table I reserved for [six on October 10th](date).
-      - Please cancel my reservation for [November 30th](date).
+      - Please cancel my reservation.
+      - Can I cancel my reservation ?
+      - I want to cancel my booking
+      - Cancel my table
+
+  - intent: cancel_reservation_confirmation
+    examples: |
+      - CANCEL - [123456](cancel_reservation_id)
 
   - intent: add_comment
     examples: |

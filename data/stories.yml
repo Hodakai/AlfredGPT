@@ -21,8 +21,7 @@ stories:
       - intent: book_table_phone
         entities:
           - phone: "+33627364526"
-      - action: utter_check_availability
-      - action: utter_book_table_recap
+      - action: action_save_booking_to_json
 
   - story: add comment to reservation
     steps:
@@ -34,9 +33,11 @@ stories:
   - story: cancel reservation
     steps:
       - intent: cancel_reservation
-      - action: utter_ask_reservation_id
-      - intent: affirm
-      - action: utter_cancel_reservation
+      - action: utter_ask_cancel
+      - intent: cancel_reservation_confirmation
+        entities:
+          - cancel_reservation_id: "123456"
+      - action: action_delete_booking
 
   - story: show and change reservation info
     steps:
