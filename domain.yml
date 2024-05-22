@@ -16,11 +16,14 @@ intents:
   - check_availability
   - cancel_reservation
   - add_comment
-  - show_reservation_info
-  - change_comment
+  - show_info
+  - comment
   - get_allergens
   - get_menu
   - cancel_reservation_confirmation
+  - change_reservation_comment
+  - show_info_confirmation
+  - add_comment_confirmation
 
 entities:
   - date
@@ -30,10 +33,14 @@ entities:
   - comment
   - reservation_id
   - cancel_reservation_id
+  - info_reservation_id
+  - comment_reservation_id
 
 actions:
   - action_save_booking_to_json
   - action_delete_booking
+  - action_add_comment
+  - action_show_booking_infos
 
 responses:
   utter_greet:
@@ -67,13 +74,16 @@ responses:
     - text: "Your reservation has been successfully cancelled."
 
   utter_add_comment:
-    - text: "I have added this comment to your reservation: {comment}"
+    - text: "Please write your reservation ID like this to enter your comment : COMMENT - [Reservation ID]"
 
-  utter_show_reservation_info:
-    - text: "Here is your reservation information: {reservation_info}"
+  utter_show_info:
+    - text: "Please write your reservation ID like this to get your informations : INFO - [Reservation ID]"
 
   utter_change_comment:
     - text: "I've updated your comment to: {comment}"
+
+  utter_ask_comment:
+    - text: "Please write your comment"
 
   utter_get_allergens:
     - text: "Margherita Pizza: Tomato sauce, mozzarella, and fresh basil (Allergens: Gluten, Dairy)
@@ -111,7 +121,8 @@ slots:
   slot_comment:
     type: text
     mappings:
-      - type: from_text
+      - type: from_entity
+        entity: comment
   slot_reservation_id:
     type: text
     mappings:
@@ -122,6 +133,16 @@ slots:
     mappings:
       - type: from_entity
         entity: cancel_reservation_id
+  slot_info_reservation_id:
+    type: text
+    mappings:
+      - type: from_entity
+        entity: info_reservation_id
+  slot_comment_reservation_id:
+    type: text
+    mappings:
+      - type: from_entity
+        entity: comment_reservation_id
 
 session_config:
   session_expiration_time: 60

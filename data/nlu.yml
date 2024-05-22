@@ -356,74 +356,39 @@ nlu:
     examples: |
       - CANCEL - [123456](cancel_reservation_id)
 
+  - intent: show_info_confirmation
+    examples: |
+      - INFO - [123456](info_reservation_id)
+
+  - intent: add_comment_confirmation
+    examples: |
+      - COMMENT - [123456](comment_reservation_id)
+
   - intent: add_comment
     examples: |
-      - Can you add a note to my booking? Some guests are vegetarian.
-      - Please add a comment that we will need a high chair.
-      - Include a note for a birthday cake, it's a surprise.
-      - Make a comment about dietary restrictions; no dairy please.
-      - I'd like you to add a note about needing wheelchair access.
-      - Please note that we'll have two toddlers with us.
-      - Can you please add that we need a quiet table away from the kitchen?
-      - Mention in the booking that we'll arrive 20 minutes late.
-      - Add a request for a window seat if available.
-      - Include a preference for a booth in the reservation notes.
-      - Please comment that we want separate bills.
-      - Note that we require gluten-free options.
-      - Can you make a note that we will need parking space for two cars?
-      - Add that we will be celebrating an anniversary.
-      - Include a need for pet-friendly seating if possible.
-      - Note a peanut allergy for one of our guests.
-      - Please add that we need low-sodium options for our meals.
-      - Can you put a note that we prefer not to be seated near large groups?
-      - Make a note that one of us uses a hearing aid and needs a quieter area.
-      - Include a request for extra napkins and spoons at the table.
+      - I want to add a comment
+      - How can I add a note to my booking
+      - Please add a note on my table
+      - Could I add a note to my reservation
+      - Can I add a comment on my booking
 
-  - intent: show_reservation_info
+  - intent: show_info
     examples: |
       - Can you show me my reservation details?
       - What details do you have on my booked table?
       - Please pull up my booking information.
       - I need to review the specifics of my reservation.
-      - Show me the reservation under [my name](name).
-      - Can you confirm the date and time of my booked table?
-      - What did I book for [June 20th](date)?
-      - Can I see the details for our dinner next week?
-      - Display my reservation for [this Saturday night](date).
-      - What are the reservation details for [Ella's birthday party](name)?
-      - Could I see the number of seats I reserved?
-      - Please confirm my reservation time.
-      - Can you check my booking for a party of [six](people)?
-      - Show the details of the table reserved under [John Doe](name).
-      - What's the booking status for [April 10th](date)?
-      - Details for my reservation this weekend, please.
-      - Review the reservation set for [December 24th](date), if you can.
-      - I'm looking for information on our reservation next month.
-      - Checker the details on the booking for [July 5th](date).
-      - Provide the booking info for a table under [Stephanie](name).
+      - I would like to get my booking informations
+      - Get me my reservation details
 
-  - intent: change_comment
+  - intent: comment
     examples: |
-      - Change the earlier comment to include a request for window seating.
-      - I need to update my reservation to add that I'll be bringing a pet.
-      - Please modify our reservation to indicate a gluten-free diet.
-      - Can we change the comment to specify a birthday celebration?
-      - Black Friday special: Take 20% off a Storybook Premium subscription
-      - Update the booking note; we'll be five minutes late.
-      - Change our reservation to note that one guest is in a wheelchair.
-      - Could you please adjust the booking to state a preference for indoor seating?
-      - Revise the note to specify no high chairs needed now.
-      - Update the comment to include a need for a quiet table.
-      - Please edit the reservation note to reflect no dietary restrictions.
-      - Change my booking to add an extra guest.
-      - Can you correct the reservation to include a car seat requirement?
-      - I'd like to adjust the booking to add a vegetarian option.
-      - Please alter the booking to note our late arrival.
-      - Modify the reservation details to exclude seafood.
-      - Can you update my booking to reflect no alcohol at the table?
-      - Adjust the note to ask for a corner table.
-      - Please revise the booking to include a request for birthday decorations.
-      - Change the reservation note to specify an anniversary dinner.
+      - [Request for window seating](comment)
+      - [I'll be bringing a pet](comment)
+      - [Please modify our reservation to indicate a gluten-free diet](comment)
+      - [We have a birthday](comment)
+      - [I'll be 15 min late](comment)
+      - [I'll be late](comment)
 
   - intent: get_allergens
     examples: |

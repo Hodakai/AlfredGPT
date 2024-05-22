@@ -6,21 +6,6 @@ rules:
       - intent: goodbye
       - action: utter_goodbye
 
-  - rule: Add a comment to reservation
-    steps:
-      - intent: add_comment
-      - action: utter_add_comment
-
-  - rule: Show reservation info
-    steps:
-      - intent: show_reservation_info
-      - action: utter_show_reservation_info
-
-  - rule: Change reservation comment
-    steps:
-      - intent: change_comment
-      - action: utter_change_comment
-
   - rule: Get allergens list
     steps:
       - intent: get_allergens

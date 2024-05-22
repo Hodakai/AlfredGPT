@@ -104,12 +104,12 @@ class ActionAddComment(Action):
 
         json_file = "reservation_data.json"
         comment = tracker.get_slot('slot_comment')
-        booking_id = tracker.get_slot('slot_reservation_id')
+        reservation_id = tracker.get_slot('slot_comment_reservation_id')
         booking_found = False
         with open(json_file, 'r', encoding="utf-8") as booking_data:
             reservations = json.load(booking_data)
             for booking in reservations:
-                if booking['id'] == booking_id:
+                if booking['id'] == reservation_id:
                     booking['comment'] = comment
                     booking_found = True
 
@@ -117,7 +117,7 @@ class ActionAddComment(Action):
         if booking_found:
             with open(json_file, 'w', encoding='utf-8') as file:
                 json.dump(reservations, file, indent=4)
-                dispatcher.utter_message(text=f"Comment added to booking {booking_id} : {comment}")
+                dispatcher.utter_message(text=f"Comment added to booking {reservation_id} : {comment}")
         else:
             dispatcher.utter_message(text="No booking found with this ID")
         return []
@@ -157,12 +157,13 @@ class ActionShowBookingInfos(Action):
             domain: Dict[Text, Any]) -> List[Dict[Text, Any]]:
 
         json_file = "reservation_data.json"
-        reservation_id = tracker.get_slot('slot_reservation_id')
+        reservation_id = tracker.get_slot('slot_info_reservation_id')
+        booking_found = False
         new_reservation_data = {}
         with open(json_file, 'r', encoding="utf-8") as booking_data:
             reservations = json.load(booking_data)
             for booking in reservations:
-                if booking['id'] == booking_id:
+                if booking['id'] == reservation_id:
                     reservation_data = {
                         "id": booking['id'],
                         "sender_id": booking['sender_id'],
@@ -176,7 +177,7 @@ class ActionShowBookingInfos(Action):
                     booking_found = True
 
         if booking_found:
-            recap_time = datetime.datetime.fromtimestamp(new_reservation_data['created_at'])
+            recap_time = datetime.datetime.fromtimestamp(reservation_data['created_at'])
             recap_message = (
                 f"Here is your reservation infos :"
                 f"- Reservation ID: {reservation_data['id']}"

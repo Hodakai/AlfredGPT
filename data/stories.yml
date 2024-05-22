@@ -39,14 +39,27 @@ stories:
           - cancel_reservation_id: "123456"
       - action: action_delete_booking
 
-  - story: show and change reservation info
+  - story: add comment
     steps:
-      - intent: show_reservation_info
-      - action: utter_show_reservation_info
-      - intent: change_comment
+      - intent: add_comment
+      - action: utter_add_comment
+      - intent: add_comment_confirmation
+        entities:
+          - comment_reservation_id: "123456"
+      - action: utter_ask_comment
+      - intent: comment
         entities:
           - comment: "I'll be late by 15 minutes"
-      - action: utter_change_comment
+      - action: action_add_comment
+
+  - story: show reservation infos
+    steps:
+      - intent: show_info
+      - action: utter_show_info
+      - intent: show_info_confirmation
+        entities:
+          - info_reservation_id: "123456"
+      - action: action_show_booking_infos
 
   - story: query for allergens
     steps:
