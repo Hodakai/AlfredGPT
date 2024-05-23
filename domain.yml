@@ -49,6 +49,9 @@ responses:
   utter_goodbye:
     - text: "Goodbye ! Hope to see you soon."
 
+  utter_bot_challenge:
+    - text: "I'm AlfredGPT to serve you !"
+
   utter_book_table_date:
     - text: "Sure, for which date would you like the reservation ?"
 
