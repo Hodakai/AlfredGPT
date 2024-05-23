@@ -1,5 +1,5 @@
 # Chatbot RASA
-Projet 1I Classe 2 EPSI
+Projet I1 Classe 2 EPSI
 
 Par GRAVY Thomas
 
